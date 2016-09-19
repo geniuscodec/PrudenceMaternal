@@ -480,7 +480,7 @@ public class Welcomes extends javax.swing.JFrame {
         MenuMother.add(menuItemEditMother);
 
         MenuItemPregnancy.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        MenuItemPregnancy.setText("Pregnancy Details");
+        MenuItemPregnancy.setText("Pregnancy Stages");
         MenuItemPregnancy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuItemPregnancyActionPerformed(evt);
@@ -586,7 +586,7 @@ public class Welcomes extends javax.swing.JFrame {
                 String textLine = "First Name:" + TextFieldFirstName.getText() + "," + "Surname:" + TextFieldSurname.getText() + "\n";
                 FileWriter write = new FileWriter("Mother.txt");
                 PrintWriter print_line = new PrintWriter(write);
-                print_line.printf("%s" + "%n", allMothers + textLine);
+                print_line.printf("%s" + "%n" , allMothers + textLine);
                 print_line.close();
 
             } catch (FileNotFoundException ex) {
@@ -685,7 +685,7 @@ public class Welcomes extends javax.swing.JFrame {
                 String allEmployees = sb.toString();
                 //Let's concatenate the file with the new details
 
-                String textLine = "First name:" + TextFieldFirstN.getText() + " " + "Surname:" + TextFieldSurnames.getText() + "\n";
+                String textLine = "First name:" + TextFieldFirstN.getText() + " " + "Surname:" + TextFieldSurnames.getText() +  "\n";
                 FileWriter write = new FileWriter("Employee.txt");
                 PrintWriter print_line = new PrintWriter(write);
                 print_line.printf("%s" + "%n", allEmployees + textLine );

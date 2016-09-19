@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ben
+ * @author PC
  */
 public class SignUp extends javax.swing.JFrame {
 
@@ -55,7 +55,7 @@ public class SignUp extends javax.swing.JFrame {
 
         lblConfirmPassword.setText("Confirm Password");
 
-        btnRegister.setText("Save");
+        btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
@@ -67,29 +67,29 @@ public class SignUp extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(244, 244, 244)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblConfirmPassword)
+                    .addComponent(lblUsername)
+                    .addComponent(txtRegUsername)
+                    .addComponent(lblPassword)
+                    .addComponent(txtRegPassword)
+                    .addComponent(txtRegConfirmPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(lblSignUp))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRegister)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblConfirmPassword)
-                                .addComponent(lblUsername)
-                                .addComponent(txtRegUsername)
-                                .addComponent(lblPassword)
-                                .addComponent(txtRegPassword)
-                                .addComponent(txtRegConfirmPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)))))
+                        .addGap(69, 69, 69)
+                        .addComponent(btnRegister)))
                 .addContainerGap(128, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(231, 231, 231))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(54, 54, 54)
                 .addComponent(lblSignUp)
-                .addGap(40, 40, 40)
+                .addGap(37, 37, 37)
                 .addComponent(lblUsername)
                 .addGap(13, 13, 13)
                 .addComponent(txtRegUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -101,9 +101,9 @@ public class SignUp extends javax.swing.JFrame {
                 .addComponent(lblConfirmPassword)
                 .addGap(18, 18, 18)
                 .addComponent(txtRegConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addComponent(btnRegister)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -131,12 +131,15 @@ public class SignUp extends javax.swing.JFrame {
         try {
             String username = txtRegUsername.getText().trim();
             String password = txtRegPassword.getText().trim();
+            
             //Check if password and confirm password are equal
             String textLine = username + ":" + password;
             write = new FileWriter("login.txt");
-            PrintWriter print_line = new PrintWriter(write);
-            print_line.printf("%s" + "%n", textLine);
-            print_line.close();
+           PrintWriter print_line = new PrintWriter(write,true);
+          // PrintWriter out= new PrintWriter(new FileWriter("login.txt",true));
+           print_line.printf("%s" + "%n", textLine);
+           print_line.close();
+          
         } catch (IOException ex) {
             Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
